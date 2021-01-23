@@ -1,20 +1,20 @@
 const chalk = require ("chalk");
 
 class Person {
-    constructor(name, favoriteColors, backgroundColors) {
+    constructor(name, favoriteColor, backgroundColor) {
 
         this.name = name;
 
-        this.favoriteColors = favoriteColors;
+        this.favoriteColor = favoriteColor;
         
-        this.backgroundColors = backgroundColors;
+        this.backgroundColor = backgroundColor;
 
     }
 
     speak() {
 
-        for(let i = 0; i < this.favoriteColors.length; i++) {
-            console.log(chalk.bgHex(this.backgroundColors[i]).hex(this.favoriteColors[i])(this.name));
+        for(let i = 0; i < this.favoriteColor.length; i++) {
+            console.log(chalk.bgHex(this.backgroundColor[i]).hex(this.favoriteColor[i])(this.name));
         }
     }
 
