@@ -11,8 +11,9 @@ const customer = {
 };
 
 
-const output = <div> <h1>My name is "console.log(customer.first_name)</h1>
-<h2>My last name is console.log(customer.last_name)</h2>
-</div>;
+const output = 
+  <h1>My name is </h1>; console.log(customer.first_name);
+<h2>My last name is </h2>; console.log(customer.last_name);
+
 
 ReactDOM.render(output, document.querySelector("#root"));
