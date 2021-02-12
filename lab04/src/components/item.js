@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Item(props){
+function MarketItem(props){
 
     return(
         <div>
-            <p>Item{props.count}</p>
+            <p>Item {props.count}</p>
         </div>
     );
 
 }
 
-export default Item
+export default MarketItem

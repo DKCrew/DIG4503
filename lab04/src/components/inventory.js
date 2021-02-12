@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Item from './item'
+import MarketItem from './item'
 
-class Inventory extends Component 
+class Market extends Component 
 {
 constructor(props){
     super(props);
@@ -16,7 +16,7 @@ render()
 
 return(
     <div>
-        <Item count = {this.state.count}/>
+        <MarketItem count = {this.state.count}/>
         <button  onClick={() => this.setState({count: this.state.count +1})}> Add an Item</button>
     </div>
 )
@@ -26,4 +26,4 @@ return(
 }
 
 
-export default Inventory
+export default Market

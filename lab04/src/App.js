@@ -1,11 +1,11 @@
 import React from 'react';
-import Inventory from './components/inventory'
+import Market from './components/inventory'
 
 
 function App() {
   
     return(
-      <Inventory/>
+      <Market/>
     )
 }
 
