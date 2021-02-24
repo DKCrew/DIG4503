@@ -1,34 +1,33 @@
 import React, {useState, useEffect} from 'react';
-import axios from "axios";
+import axios from 'axios';
 
 const Posts = () => {
-const [post, postCount] = useState(0);
+const [post, setPosts] = useState(0);
 
 useEffect(() => {
-    console.log("Use effect ran");
+    axios.get('https://jsonplaceholder.typicode.com/posts').then((res => {
+        const responsePosts = res.data;
+        setPosts(responsePosts);
+    }));
 }, []);
 
-useEffect(() => {
-    console.log("Use effect ran");
-}, [post]);
 
-useEffect(() => {
-
-    console.log("Use effect ran");
-
-    return() => {
-
-console.log("return is being run");
-
-    }
-
-}, []);
 
 return(
     <div>
         <h1>Post</h1>
-        <p>Number of Posts: {post}</p>
-        <button onClick = { () => postCount(post + 1)}>Add a post</button>
+        {
+            post &&
+            post.map((post) => {
+                const {id, title} = post;
+                return (
+                    <div key = {id}>
+                        <h2>{title}</h2>
+                        <h3>This post is from user: {id}</h3>
+                    </div>
+                )
+            })
+        }
     </div>
 );
 
