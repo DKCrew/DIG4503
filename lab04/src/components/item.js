@@ -4,7 +4,7 @@ function MarketItem(props){
 
     return(
         <div>
-            <p>You have clicked this button {props.count} times!</p>
+            <p>You're up to {props.count} clicks!</p>
         </div>
     );
 
