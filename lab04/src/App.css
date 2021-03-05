@@ -17,8 +17,6 @@ button {
   color: rgb(43, 41, 41);
   padding: 14px 28px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-family: helvetica;
   font-weight: bold;
   font-size: 18px;
@@ -30,4 +28,10 @@ button {
 button:hover {
   background-color: #ffffff;
   color: rgb(46, 43, 43);
+}
+
+button:active {
+  background-color: #afa9b3;
+  box-shadow: 0 5px rgb(22, 19, 27);
+  transform: translateY(2px);
 }
