@@ -8,7 +8,7 @@ let fileContents = fs.readFileSync("database.json");
 
 let database = JSON.parse(fileContents);
 
-App.get("/api/employees/names/:name", (req, res) => {
+App.get("/employees/:name", (req, res) => {
     let result = {"error": "Not Available"};
 
     database.forEach((value) => {
@@ -17,7 +17,7 @@ App.get("/api/employees/names/:name", (req, res) => {
 res.json(result);
 })
 
-App.get("api/employees/ages/:number", (req, res) => {
+App.get("/ages/:number", (req, res) => {
 
     let result = {"error": "Not Available"};
     database.forEach((value) => {
