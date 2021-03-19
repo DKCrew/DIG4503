@@ -2,7 +2,7 @@ import Express from "express";
 import fs from "fs";
 
 const App = Express();
-const port = 3002;
+const port = 3010;
 
 let fileContents = fs.readFileSync("database.json");
 
