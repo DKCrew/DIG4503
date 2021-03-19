@@ -15,7 +15,8 @@ useEffect(() => {
 
 return(
     <div>
-        <h1>Post</h1>
+        <h1>Post Tests</h1>
+        
         {
             post &&
             post.map((post) => {
@@ -28,6 +29,7 @@ return(
                 )
             })
         }
+        
     </div>
 );
 
