@@ -10,7 +10,7 @@ let database = JSON.parse(fileContents);
 
 App.use("/", Express.static("public"));
 
-App.get("/employees/:name", (req, res) => {
+App.get("employees/:name", (req, res) => {
     let result = {"error": "Not Available"};
 
     database.forEach((value) => {
@@ -19,7 +19,7 @@ App.get("/employees/:name", (req, res) => {
 res.json(result);
 })
 
-App.get("/ages/:number", (req, res) => {
+App.get("ages/:number", (req, res) => {
 
     let result = {"error": "Not Available"};
     database.forEach((value) => {

@@ -1,7 +1,7 @@
 <html>
     <body>
         <script>
-            function readScore(event) {
+            function readName(event) {
                 event.preventDefault();
 
                 let element = document.querySelector("#name")
@@ -56,7 +56,7 @@
 
                 let age = document.querySelector("#employeeAge");
 
-                fetch("/employees/:name/:age" + name.value + "/" + age.value, {
+                fetch("employees/:name/:age" + name.value + "/" + age.value, {
                     "method": "post"
                 })
                 .then((res) => {
