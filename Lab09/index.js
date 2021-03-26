@@ -28,7 +28,7 @@ App.get("ages/:number", (req, res) => {
     res.json(result);
 })
 
-App.post("/employees/:name/:age", (req, res) => {
+App.post("employees/:name/:age", (req, res) => {
     let result = {
         "name": req.params.name,
         "age": parseInt(req.params.age)
