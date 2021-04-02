@@ -8,7 +8,7 @@ class AgeSearch extends React.Component{
 
         let element = document.querySelector("#age");
 
-        fetch("/ages/:number" + element.value)
+        fetch("/ages/" + element.value)
         .then((res) => {
             return res.json();
         })

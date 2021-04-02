@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import NameSearch from "./components/NameSearch";
 import ReportingArea from "./components/ReportingArea";
 import AgeSearch from "./components/AgeSearch";

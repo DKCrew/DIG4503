@@ -10,9 +10,9 @@ let fileContents = fs.readFileSync("database.json");
 
 let database = JSON.parse(fileContents);
 
-App.use("/", Express.static("public"));
+App.use("/", Express.static("client/build"));
 
-App.get("/employees/:name", (req, res) => {
+App.get("/employees/names/:name", (req, res) => {
     let result = {"error": "Not Available"};
 
     database.forEach((value) => {
@@ -21,7 +21,7 @@ App.get("/employees/:name", (req, res) => {
 res.json(result);
 })
 
-App.get("/ages/:number", (req, res) => {
+App.get("/employees/ages/:number", (req, res) => {
 
     let result = {"error": "Not Available"};
     database.forEach((value) => {
@@ -30,7 +30,7 @@ App.get("/ages/:number", (req, res) => {
     res.json(result);
 })
 
-App.post("employees/:name/:age", (req, res) => {
+App.post("/employees/:name/:age", (req, res) => {
     let result = {
         "name": req.params.name,
         "age": parseInt(req.params.age)
