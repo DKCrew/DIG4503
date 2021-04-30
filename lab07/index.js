@@ -1,6 +1,7 @@
 import Express from 'express';
-import chalk from 'chalk'; //imports chalk styleset from the installed package
-import intro from './intro.js'; //imports created module to display in command line
+import chalk from 'chalk'; //imports chalk styleset from the installed external package
+import intro from './intro.js'; //imports created external module to display in command line
+import check from './servercheck.js'
 
 const App = Express();
 
@@ -11,11 +12,12 @@ console.log(chalk.red.bold("The server has been updated!") );
 
 intro();
 
+check();
 
-var serverCheck = setInterval(function () {
+//var serverCheck = setInterval(function () {
 
-    console.log(chalk.blue.bold("The server is still running.") );
-    }, 25000); 
+    //console.log(chalk.blue.bold("The server is still running.") );
+    //}, 25000); 
     
     //simple module that updates every 25000ms if the server is still operational
     //and outputs to console
