@@ -1,19 +1,24 @@
 import Express from 'express';
 import chalk from 'chalk'; //imports chalk styleset from the installed package
+import intro from './intro.js';
 
 const App = Express();
 
 const port = 3008;
 
-
 console.log(chalk.red.bold("The server has been updated!") ); 
 //displays a bolded message when the nodemon server updates
+
+intro();
+
 
 var serverCheck = setInterval(function () {
 
     console.log(chalk.blue.bold("The server is still running.") );
+    }, 25000); 
     
-}, 25000); //simple module that updates every 25000ms if the server is still operational
+    //simple module that updates every 25000ms if the server is still operational
+    //and outputs to console
 
 
 const games = [
@@ -39,7 +44,7 @@ App.get('/games/:title', (req,res) => {
     
     }
     else {
-        res.json({Title : "Not Found"})
+        res.json({Title : "Title Not Found"})
     }
 });
 
@@ -49,7 +54,7 @@ App.get('/search/:title', (req, res) => {
     if (result !=0) {
         res.json({ search: result});
     } else {
-        res.json({ search: "Not found" });
+        res.json({ search: "Title Not found" });
     }
 })
 
