@@ -1,10 +1,10 @@
 import Express from 'express';
 import chalk from 'chalk'; //imports chalk styleset from the installed package
-import intro from './intro.js';
+import intro from './intro.js'; //imports created module to display in command line
 
 const App = Express();
 
-const port = 3008;
+const port = 3008; //sets port to 3008
 
 console.log(chalk.red.bold("The server has been updated!") ); 
 //displays a bolded message when the nodemon server updates

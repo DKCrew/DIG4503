@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import chalk from 'chalk'; //imports chalk to style output
 
 export default function intro(){
     console.log(chalk.bold('Welcome to the program! Please search our database using your preferred browser.'));
