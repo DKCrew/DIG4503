@@ -1,37 +1,50 @@
 import Express from 'express';
+import chalk from 'chalk'; //imports chalk styleset from the installed package
 
 const App = Express();
 
-const port = 3002;
+const port = 3008;
 
-const names = [
-    'Cortney',
-    'Dewayne',
-    'Trenton',
-    'Pamala',
-    'Ettie',
-    'Errol',
-    'Lorrie',
-    'Hang',
-    'Lauryn',
-    'Caterina',
-    'Isa',
-    'Marcela'
+
+console.log(chalk.red.bold("The server has been updated!") ); 
+//displays a bolded message when the nodemon server updates
+
+var serverCheck = setInterval(function () {
+
+    console.log(chalk.blue.bold("The server is still running.") );
+    
+}, 25000); //simple module that updates every 25000ms if the server is still operational
+
+
+const games = [
+    'Mario',
+    'Megaman 2',
+    'Sonic 3',
+    'Project Diva',
+    'Skullgirls',
+    'Street Fighter',
+    'Monster Hunter',
+    'Hades',
+    'Katamari Damacy',
+    'Castlevania',
+    'Super Smash Bros',
+    'Mario Kart'
 ];
 
-App.get('/names/:name', (req,res) => {
-    let name = req.params.name;
-    if (names.includes(name)){
-        res.json({ Name: name});
+
+App.get('/games/:title', (req,res) => {
+    let title = req.params.title;
+    if (games.includes(title)){
+        res.json({ "This game exists in our system": title});
     
     }
     else {
-        res.json({Name : "Not Found"})
+        res.json({Title : "Not Found"})
     }
 });
 
-App.get('/search/:name', (req, res) => {
-    const result = names.filter(str => str.includes(req.params.name));
+App.get('/search/:title', (req, res) => {
+    const result = games.filter(str => str.includes(req.params.title));
 
     if (result !=0) {
         res.json({ search: result});
