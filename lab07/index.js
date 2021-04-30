@@ -14,15 +14,6 @@ intro();
 
 check();
 
-//var serverCheck = setInterval(function () {
-
-    //console.log(chalk.blue.bold("The server is still running.") );
-    //}, 25000); 
-    
-    //simple module that updates every 25000ms if the server is still operational
-    //and outputs to console
-
-
 const games = [
     'Mario',
     'Megaman 2',

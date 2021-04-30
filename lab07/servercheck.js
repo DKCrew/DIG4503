@@ -1,7 +1,7 @@
 import chalk from 'chalk';//imports chalk module to style output to command line
 
 export default function check(){ //sets function to export as module "check"
-    var serverCheck = setInterval(function () {
+    setInterval(function () {
 
         console.log(chalk.blue.bold("The server is still running.") );
         }, 25000);
